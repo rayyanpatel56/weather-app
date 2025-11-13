@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beautiful Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <aside class="panel">
+      <div class="brand">
+        <div class="logo">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 14a4 4 0 100-8 4 4 0 000 8z" fill="white" opacity="0.9"/>
+            <path d="M12 20a6 6 0 100-12 6 6 0 000 12z" fill="white" opacity="0.18"/>
+          </svg>
+        </div>
+        <div>
+          <div class="title">Beautiful Weather</div>
+          <div class="subtitle">Fast, minimal & responsive</div>
+        </div>
+      </div>
+
+      <div>
+        <label class="small">Search city</label>
+        <div class="controls">
+          <div class="search">
+            <input id="cityInput" placeholder="e.g. Karachi, London, Tokyo" />
+            <button id="searchBtn" class="btn">Search</button>
+          </div>
+          <button id="geoBtn" class="ghost">Use my location</button>
+        </div>
+      </div>
+
+      <div class="meta">
+        <div class="small">Units</div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <button id="cBtn" class="ghost">°C</button>
+          <button id="fBtn" class="ghost">°F</button>
+        </div>
+      </div>
+
+      <div style="margin-top:auto;font-size:12px;color:var(--muted);">
+        Last search: <span id="lastCity" class="muted">—</span>
+      </div>
+    </aside>
+
+    <main class="card">
+      <div class="sky"></div>
+      <div class="top">
+        <div>
+          <div class="big-temp" id="temp">—</div>
+          <div class="desc" id="place">Welcome — search a city</div>
+        </div>
+        <div style="margin-left:auto;text-align:right">
+          <div class="conditions">
+            <div class="icon-wrap" id="iconWrap">
+              <svg id="iconSVG" viewBox="0 0 64 64" width="68" height="68"></svg>
+            </div>
+            <div style="text-align:right">
+              <div id="cond" class="muted">—</div>
+              <div id="timeLocal" class="small muted">—</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="details" id="details">
+        <div class="pill">Feels like: <span id="feels">—</span></div>
+        <div class="pill">Humidity: <span id="hum">—</span></div>
+        <div class="pill">Wind: <span id="wind">—</span></div>
+        <div class="pill">Pressure: <span id="press">—</span></div>
+      </div>
+
+      <div class="footer">
+        <div class="small muted">Powered by OpenWeatherMap</div>
+        <div id="errorMsg" class="error hidden"></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+:root {
+  --bg1: #0f1724;
+  --accent: #7dd3fc;
+  --glass: rgba(255,255,255,0.06);
+  --glass-strong: rgba(255,255,255,0.09);
+  --text: #e6eef8;
+  --muted: #9fb4c9;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--bg1), #032b43);
+  color: var(--text);
+  padding: 32px;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 28px;
+  width: 100%;
+  max-width: 980px;
+}
+
+@media (max-width: 880px) {
+  .app { grid-template-columns: 1fr; }
+}
+
+.panel, .card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 20px;
+  padding: 22px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: linear-gradient(135deg,var(--accent),#60a5fa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title { font-weight: 700; font-size: 18px; }
+.subtitle, .muted, .small { color: var(--muted); font-size: 13px; }
+
+.controls { display: flex; gap: 8px; }
+.search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: var(--glass);
+  padding: 10px;
+  border-radius: 12px;
+}
+.search input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 15px;
+}
+.btn, .ghost {
+  border: none;
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.btn {
+  background: linear-gradient(90deg,#0ea5e9,#7dd3fc);
+  color: #032a3a;
+  font-weight: 600;
+}
+.ghost {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.04);
+  color: var(--text);
+}
+
+.big-temp { font-size: 68px; font-weight: 800; }
+.details { display: flex; gap: 10px; flex-wrap: wrap; }
+.pill {
+  background: var(--glass-strong);
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+}
+
+.error {
+  color: #ffb4b4;
+  background: rgba(255,20,20,0.04);
+  padding: 8px;
+  border-radius: 8px;
+}
+.hidden { display: none; }
